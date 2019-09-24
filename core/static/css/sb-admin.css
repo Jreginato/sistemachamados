@@ -7013,9 +7013,9 @@ button.bg-light:hover,
 button.bg-light:focus {
   background-color: #dae0e5 !important;
 }
-/* cpr de fundo - menu superior e pagina login inicial */
+/* cor de fundo - menu superior e pagina login inicial */
 .bg-dark {
-  background-color: #bd2130!important;
+  background-color: #721c24!important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -10700,7 +10700,7 @@ body {
 /* menu lateral cor navbar lateral */
 .sidebar {
   width: 90px !important;
-  background-color: #bd2130;
+  background-color: #721c24;
   min-height: calc(100vh - 56px);
 }
 
