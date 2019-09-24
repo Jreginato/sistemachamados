@@ -2631,14 +2631,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #0069d9;
+  border-color: #0069d9;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: darkblue;
+  border-color: darkblue;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -4447,6 +4447,7 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  
 }
 
 .navbar > .container,
@@ -4779,6 +4780,7 @@ input[type="button"].btn-block {
   flex-basis: auto;
 }
 
+/* inicio itens menu lateral*/
 .navbar-expand .navbar-toggler {
   display: none;
 }
@@ -4879,6 +4881,7 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
+/*navbar lateral acima /\ */
 .logo {
   position: relative;
   width: 120px;
@@ -4888,7 +4891,7 @@ input[type="button"].btn-block {
 }
 
 
-
+/*  login card  */
 .card {
   position: relative;
   display: -webkit-box;
@@ -6952,7 +6955,7 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #6c757d !important;
+  background-color: #7d6c6c !important;
 }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
@@ -7010,9 +7013,9 @@ button.bg-light:hover,
 button.bg-light:focus {
   background-color: #dae0e5 !important;
 }
-
+/* cpr de fundo - menu superior e pagina login inicial */
 .bg-dark {
-  background-color: dodgerblue!important;
+  background-color: #bd2130!important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -10694,10 +10697,10 @@ body {
     width: auto;
   }
 }
-
+/* menu lateral cor navbar lateral */
 .sidebar {
   width: 90px !important;
-  background-color: #212529;
+  background-color: #bd2130;
   min-height: calc(100vh - 56px);
 }
 
