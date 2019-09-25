@@ -1945,13 +1945,13 @@ pre code {
 
 .table-dark {
   color: #fff;
-  background-color: #343a40;
+  background-color:#b21f2d ;
 }
 
 .table-dark th,
 .table-dark td,
 .table-dark thead th {
-  border-color: #454d55;
+  border-color:#0069d9;
 }
 
 .table-dark.table-bordered {
