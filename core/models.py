@@ -11,5 +11,7 @@ class Divisao(models.Model):
         managed = False
         db_table = 'divisao'
 
-def __str__(self):
+    def __str__(self):
         return self.nome
+    #def get_absolute_url(self):
+    # return reverse_lazy('divisao', kwargs={'pk': self.id})

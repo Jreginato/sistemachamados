@@ -2,7 +2,25 @@
 {% block title %} Portal SEDU - Cadastro de Divisão {% endblock %}
 
 {% block content %}
-    <H1 class="hcenter"> Tela de cadastro de Divisão</H1><br>
+    <H1 class="hcenter"> Divisões </H1><br>
+
+        <div class="row">
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="far fa-plus-square"></i>
+                </div>
+                <div class="mr-5">Para criar nova divisão</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="/divisao_create">
+                <span class="float-left">Clique aqui</span>
+                <span class="float-right">
+                  <i class="far fa-plus-square"></i>
+                </span>
+              </a>
+            </div>
+          </div>
 
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

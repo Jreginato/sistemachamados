@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Portal SEDU - Cadastro de Divisão {% endblock %}
+
+{% block content %}
+    <H1 class="hcenter"> Tela de cadastro de Divisão</H1><br>
+
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <td>Divisão</td>
+                        <td>Sigla</td>
+                    </tr>
+                </thead>
+                    
+            {% for divisao in object_list %}
+            <tr>
+            <td> {{divisao.nome}}</td>
+            <td> {{divisao.sigla}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+            </div>
+    
+
+ {% endblock %}

@@ -1945,7 +1945,7 @@ pre code {
 
 .table-dark {
   color: #fff;
-  background-color:#b21f2d ;
+  background-color: #343a40;
 }
 
 .table-dark th,
@@ -2020,6 +2020,8 @@ pre code {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin-right: 50px;
+  margin-left: 10px;
 }
 
 .table-responsive > .table-bordered {
