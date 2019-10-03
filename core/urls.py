@@ -16,7 +16,6 @@ urlpatterns = [
     path('divisaolist/', DivisaoListView.as_view(), name='divisao_list'),
     path('divisao/<int:pk>', views.DivisaoUpdateView.as_view(), name='divisao_update'),
 
-]
-    
+] 
 
 

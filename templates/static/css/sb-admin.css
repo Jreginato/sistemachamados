@@ -601,6 +601,11 @@ pre code {
     max-width: 1140px;
   }
 }
+.container-fluid-intern-forms{
+  width: 100%;
+  margin-right: 50%;
+  margin-left: 35%;
+}
 
 .container-fluid {
   width: 100%;

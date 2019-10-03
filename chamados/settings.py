@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -136,4 +137,4 @@ STATICFILES_DIRS = [
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
 SESSION_SAVE_EVERY_REQUEST = False
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
