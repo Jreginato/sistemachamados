@@ -28,6 +28,8 @@
                     <tr>
                         <td>Divisão</td>
                         <td>Sigla</td>
+                        <td>Alterar/Excluir</td>
+
                     </tr>
                 </thead>
                     
@@ -35,6 +37,10 @@
             <tr>
             <td> {{divisao.nome}}</td>
             <td> {{divisao.sigla}}</td>
+            <td> <button class="btn btn-secondary">Alterar</button>
+            <button class="btn btn-secondary">Excluir</button>
+            </td>
+        
             </tr>
             {% endfor %}
             </table>

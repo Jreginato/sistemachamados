@@ -4,13 +4,26 @@
 
 {% block content %}
 <div class="col-sm-6">
-<form method="post" action="">
-{% csrf_token %}
-{{ form|crispy }}
-</form>
+{% if submitted %}
+    <p class="">
+        Your message was submitted successfully. Thank you.
+    </p>
+    {% else %}
 
-<button type="submit" class="btn btn-primary">Salvar</button>
+<form method="post" action="" novalidate>
+
+
+{{ form|crispy }}
+
+{% csrf_token %}
+
+<button type="submit" class="btn btn-primary" value="submit">Salvar</button>
 <button type="reset" class="btn btn-primary" style="margin: 0 20px">Limpar</button>
+
+</form>
+ {% endif %}
+
+
 </div>
 <p>
 

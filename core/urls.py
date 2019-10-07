@@ -1,13 +1,12 @@
 from django.urls import path
 from . import views
-from .views import  DivisaoDeleteView, DivisaoListView, DivisaoUpdateView
+from .views import *
 
 #arquivo criado para citar coleção de urls
 
 urlpatterns = [
     #Links
     path('inicio/', views.inicio, name='inicio'),
-    #path('divisao/', views.divisao, name='divisao'),
     path('', views.login, name='login'),
 
     #CRUD DIVISAO
@@ -15,6 +14,12 @@ urlpatterns = [
     path('divisao/delete/<int:pk>', views.DivisaoDeleteView.as_view(), name='divisao_delete'),
     path('divisaolist/', DivisaoListView.as_view(), name='divisao_list'),
     path('divisao/<int:pk>', views.DivisaoUpdateView.as_view(), name='divisao_update'),
+
+    #CRUD USER
+    path('user_create/', UsuarioCreate.as_view(), name = 'user_create.html'),
+
+
+
 
 ] 
 
