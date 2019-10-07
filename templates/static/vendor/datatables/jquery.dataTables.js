@@ -11388,7 +11388,8 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				/** Próxima Next page paginação #TODO */
+				"sNext": "Próxima",
 	
 	
 				/**
@@ -11411,7 +11412,8 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				/** anterior previous tabelas */
+				"sPrevious": "Anterior"
 			},
 	
 			/**
@@ -11466,7 +11468,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Mostrando _START_ de _END_ de _TOTAL_ registros",
 	
 	
 			/**
@@ -11487,7 +11489,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando 0 de 0 de 0 registros",
 	
 	
 			/**
@@ -11627,7 +11629,8 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			/** MOSTRAR X REGISTROS POR PÁGINA */
+			"sLengthMenu": "Mostrar _MENU_ registros",
 	
 	
 			/**
@@ -11707,7 +11710,9 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+
+			 /**PROCURAR - SEARCH*/
+			"sSearch": "Procurar:",
 	
 	
 			/**
