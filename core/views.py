@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect ,get_object_or_404
 from django.http import HttpResponse #nova
 #25/09 - Tentando primeiro Crud
 from .models import *
@@ -20,12 +20,7 @@ def login(request):
 def inicio(request):
     return render(request, 'inicio.html')
 
-#CREATE DIVISÃO
-#def divisao_create(request): #Linha 01 correta
-#    form = DivisaoForm() #linha 02 correta
-#    return render(request, "core/divisao_create.html", {'form':form})  # Linha 03 correta retornando html renderizado
-#                           /\ sempre colocar o template do APP/ e o form .html
-
+# Create
 def divisao_create(request):
     submitted = False
     if request.method == 'POST':
@@ -41,43 +36,36 @@ def divisao_create(request):
             submitted = True
     return render(request, 'core/divisao_create.html', {'form': form, 'submitted': submitted})
 
-def clean(self, *args, **kwargs):
-    data = self.data
-    cleaned = self.cleaned_data
 
 
+#List
 class DivisaoListView(ListView):
     model = Divisao
 template_name = "base.html"
-
-
-#class DivisaoCreateView(CreateView):
- #   model = Divisao
-  #  form_class = DivisaoForm
-   # template_name = "base.html"
-    #sucess_url = reverse_lazy('divisao_list')
-
-
-    #form_class = DivisaoForm
-
-#def form_valid(self, form):
- #       print('form is valid')
-  #      print(form.data)
-   #     obj = form.save(commit=False)
-    #    obj.save()
-     #   return HttpResponseRedirect(reverse('divisao', kwargs={'pk': obj.id}))
   
 
-class DivisaoUpdateView(UpdateView):
-    model = Divisao
-    template_name = "base.html"
+#Update
+def divisao_update(request, codigo):
+    post = get_object_or_404(Divisao, pk=codigo)
+    if request.method == "POST":
+        form = DivisaoForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False) 
+            post.save()
+            return redirect('/divisaolist')
+    else:
+        form = DivisaoForm(instance=post)
+    return render(request, 'core/divisao_create.html', {'form': form})
     
 
+# Delete
+def divisao_delete (request, codigo):
+     post = get_object_or_404 (Divisao, pk = codigo)
+     post.delete ()
+     return redirect ('/divisaolist')
 
-class DivisaoDeleteView(DeleteView):
-    model = Divisao
-    template_name = "base.html"
-
+###################################### FIM CRUD DIVISÃO ######################################
+##############################-------------------------------#################################
 
 class UsuarioCreate(CreateView):
     model = User

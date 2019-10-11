@@ -4,8 +4,8 @@ from django.db import models
 
 class Divisao(models.Model):
     codigo = models.AutoField(primary_key=True)
-    nome = models.CharField(max_length=50, blank=True, null=True)
-    sigla = models.CharField(max_length=20, blank=True, null=True)
+    nome = models.CharField(max_length=50, blank=False, null=True)
+    sigla = models.CharField(max_length=20, blank=False, null=True)
 
     class Meta:
         managed = False
