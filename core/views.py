@@ -20,7 +20,8 @@ def login(request):
 def inicio(request):
     return render(request, 'inicio.html')
 
-# Create
+# DIVISAO CRUD
+#  Create
 def divisao_create(request):
     submitted = False
     if request.method == 'POST':
@@ -67,10 +68,93 @@ def divisao_delete (request, codigo):
 ###################################### FIM CRUD DIVISÃO ######################################
 ##############################-------------------------------#################################
 
-class UsuarioCreate(CreateView):
-    model = User
-    template_name = 'core/user_create.html'
-    fields = '__all__'
-    #fields = ['usuario',]
-    #success_url = reverse_lazy('mysite:companies')
+#CRUD SEÇÃO 
+#List
+class SecaoListView(ListView):
+    model = Secao
+template_name = "base.html"
 
+#Update
+def secao_update(request, secao_codigo):
+    post = get_object_or_404(Secao, pk=secao_codigo)
+    if request.method == "POST":
+        form = SecaoForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False) 
+            post.save()
+            return redirect('/secaolist')
+    else:
+        form = SecaoForm(instance=post)
+    return render(request, 'core/secao_create.html', {'form': form})
+    
+
+# Delete
+def secao_delete (request, secao_codigo):
+     post = get_object_or_404 (Secao, pk = secao_codigo)
+     post.delete ()
+     return redirect ('/secaolist')
+
+def secao_create(request):
+    submitted = False
+    if request.method == 'POST':
+        form = SecaoForm(request.POST)
+        if form.is_valid():        
+            cd = form.cleaned_data
+             # assert False
+            form.save()
+            return HttpResponseRedirect('/secaolist')
+    else:
+        form = SecaoForm()
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'core/secao_create.html', {'form': form, 'submitted': submitted})
+
+###################################### FIM CRUD SEÇÃO ######################################
+##############################-------------------------------#################################
+
+
+#CRUD USER
+
+#List
+class UserListView(ListView):
+    model = User
+template_name = "base.html"
+
+#Update
+def user_update(request, user_cod):
+    post = get_object_or_404(User, pk=user_cod)
+    if request.method == "POST":
+        form = UserForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False) 
+            post.save()
+            return redirect('/userlist')
+    else:
+        form = UserForm(instance=post)
+    return render(request, 'core/user_create.html', {'form': form})
+    
+
+# Delete
+def user_delete (request, user_cod):
+     post = get_object_or_404 (User, pk = user_cod)
+     post.delete ()
+     return redirect ('/userlist')
+
+def user_create(request):
+    submitted = False
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():        
+            cd = form.cleaned_data
+             # assert False
+            form.save()
+            return HttpResponseRedirect('/userlist')
+    else:
+        form = UserForm()
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'core/user_create.html', {'form': form, 'submitted': submitted})
+
+
+###################################### FIM CRUD USUÁRIO USER ######################################
+##############################-------------------------------#################################

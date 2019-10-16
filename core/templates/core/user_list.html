@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %} Portal SEDU - Cadastro de Usuários {% endblock %}
+
+{% block content %}
+    <H1 class="hcenter"> Listagem de Usuários </H1><br>
+
+   <div class="row">
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+       <!--       <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="far fa-plus-square"></i>
+                </div>
+                <div class="mr-5">Para criar nova divisão</div> 
+              </div> -->
+                <a class="card-footer text-white clearfix small z-1" href="/user_create">
+                <span class="float-left">NOVO USUÁRIO</span>
+                <span class="float-right">
+                  <i class="far fa-plus-square"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <td><b>Nome</td>
+                        <td><b>CPF</td>
+                        <td><b>E-mail</td>
+                        <td><b>Alterar / Excluir</td>
+
+                    </tr>
+                </thead>
+                    
+              {% for user in object_list %}
+              <tr>
+              <td> {{user.user_nome}}</td>
+              <td> {{user.user_cpf}}</td>
+              <td> {{user.user_email}}</td>
+              <td>&nbsp &nbsp 
+              <a href="{% url 'user_update' user.user_cod %}"> <i class = "fas fa-pencil-alt"> </i> </a> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <!--Icone Lápis-->
+              <a href="{% url 'user_delete' user.user_cod %}"> <i class = "fas fa-trash-alt"> </i> </a> <!--Icone Lixeira-->
+              </td>
+              </tr>
+              {% endfor %}   
+            </table>
+            </div>
+    
+
+ {% endblock %}

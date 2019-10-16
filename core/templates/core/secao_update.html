@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Portal SEDU - Cadastro de Seção {% endblock %}
+
+{% block content %}
+    <H1 class="hcenter"> Tela de cadastro de Seção</H1><br>
+
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <td>Seção</td>
+                        <td>Sigla</td>
+                        <td>Divisão pertencente</td>
+                    </tr>
+                </thead>
+                    
+            {% for secao in object_list %}
+            <tr>
+            <td> {{secao.secao_nome}}</td>
+            <td> {{secao.secao_sigla}}</td>
+            <td> {{secao.divisao_codigo}}></td>
+            </tr>
+            {% endfor %}
+            </table>
+            </div>
+    
+
+ {% endblock %}
