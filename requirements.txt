@@ -1,6 +1,6 @@
 astroid==2.2.5
 colorama==0.4.1
-Django==2.2.4
+Django==2.2.28
 django-crispy-forms==1.7.2
 -e git+https://github.com/jazzband/django-debug-toolbar.git@ce8034cd9001712f6d548db0356ce1c71a33176c#egg=django_debug_toolbar
 isort==4.3.21
